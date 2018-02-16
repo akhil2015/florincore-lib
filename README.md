@@ -1,4 +1,4 @@
-Litecore Library
+Florincore Library
 =======
 
 [![NPM Package](https://img.shields.io/npm/v/litecore-lib.svg?style=flat-square)](https://www.npmjs.org/package/litecore-lib)
@@ -8,8 +8,7 @@ Litecore Library
 A pure and powerful JavaScript Litecoin library.
 
 ## Principles
-
-Litecoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Litecoin network allows for highly resilient litecoin infrastructure, and the developer community needs reliable, open-source tools to implement litecoin apps and services.
+Florincoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Litecoin network allows for highly resilient litecoin infrastructure, and the developer community needs reliable, open-source tools to implement florincoin apps and services.
 
 ## Get Started
 

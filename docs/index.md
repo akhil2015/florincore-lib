@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Litecore v0.1
+=======
+# Bitcore v0.14
+>>>>>>> origin
 
 ## Principles
 

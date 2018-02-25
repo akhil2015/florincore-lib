@@ -93,5 +93,10 @@ or create a test coverage report (you can open `coverage/lcov-report/index.html`
 
 Code released under [the MIT license](https://github.com/litecoin-project/litecore-lib/blob/master/LICENSE).
 
+<<<<<<< HEAD
 Copyright 2013-2015 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.
 Copyright 2016 The Litecoin Core Developers
+=======
+Copyright 2013-2017 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.
+Copyright 2016-2017 The Litecoin Core Developers
+>>>>>>> origin

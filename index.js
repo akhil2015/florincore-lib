@@ -67,5 +67,8 @@ litecore.deps.scryptsy = require('scryptsy');
 litecore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
+<<<<<<< HEAD
 litecore._HDKeyCache = require('./lib/hdkeycache');
+=======
+>>>>>>> origin
 litecore.Transaction.sighash = require('./lib/transaction/sighash');

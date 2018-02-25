@@ -207,10 +207,7 @@ describe('Transaction', function() {
     script: Script.buildPublicKeyHashOut(fromAddress).toString(),
     satoshis: 100000
   };
-<<<<<<< HEAD
-=======
   
->>>>>>> origin
   var simpleUtxoWith1000000Satoshis = {
     address: fromAddress,
     txId: 'a477af6b2667c29670467e4e0728b685ee07b240235771862318e29ddbe58458',

@@ -16,22 +16,22 @@ describe('URI', function() {
 
     URI.parse.bind(URI, 'badURI').should.throw(TypeError);
 
-    uri = URI.parse('litecoin:');
+    uri = URI.parse('florincoin:');
     expect(uri.address).to.be.undefined();
     expect(uri.amount).to.be.undefined();
     expect(uri.otherParam).to.be.undefined();
 
-    uri = URI.parse('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
+    uri = URI.parse('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
     uri.address.should.equal('LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
     expect(uri.amount).to.be.undefined();
     expect(uri.otherParam).to.be.undefined();
 
-    uri = URI.parse('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=123.22');
+    uri = URI.parse('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=123.22');
     uri.address.should.equal('LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
     uri.amount.should.equal('123.22');
     expect(uri.otherParam).to.be.undefined();
 
-    uri = URI.parse('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=123.22' +
+    uri = URI.parse('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=123.22' +
                     '&other-param=something&req-extra=param');
     uri.address.should.equal('LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
     uri.amount.should.equal('123.22');
@@ -41,24 +41,24 @@ describe('URI', function() {
 
   // TODO: Split this and explain tests
   it('URIs can be validated statically (test vector)', function() {
-    URI.isValid('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3').should.equal(true);
-    URI.isValid('litecoin:mkYY5NRvikVBY1EPtaq9fAFgquesdjqECw').should.equal(true);
+    URI.isValid('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3').should.equal(true);
+    URI.isValid('florincoin:mkYY5NRvikVBY1EPtaq9fAFgquesdjqECw').should.equal(true);
 
-    URI.isValid('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2')
+    URI.isValid('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2')
                 .should.equal(true);
-    URI.isValid('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&other=param')
+    URI.isValid('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&other=param')
                 .should.equal(true);
-    URI.isValid('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&req-other=param',
+    URI.isValid('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&req-other=param',
                 ['req-other']).should.equal(true);
-    URI.isValid('litecoin:mmrqEBJxUCf42vdb3oozZtyz5mKr3Vb2Em?amount=0.1&' +
+    URI.isValid('florincoin:mmrqEBJxUCf42vdb3oozZtyz5mKr3Vb2Em?amount=0.1&' +
                 'r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu').should.equal(true);
 
-    URI.isValid('litecoin:').should.equal(false);
-    URI.isValid('litecoin:badUri').should.equal(false);
-    URI.isValid('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=bad').should.equal(false);
-    URI.isValid('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&req-other=param')
+    URI.isValid('florincoin:').should.equal(false);
+    URI.isValid('florincoin:badUri').should.equal(false);
+    URI.isValid('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=bad').should.equal(false);
+    URI.isValid('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&req-other=param')
                 .should.equal(false);
-    URI.isValid('litecoin:?r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu')
+    URI.isValid('florincoin:?r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu')
                 .should.equal(false);
   });
 
@@ -69,29 +69,29 @@ describe('URI', function() {
   });
 
   it('do not need new keyword', function() {
-    var uri = URI('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
+    var uri = URI('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
     uri.should.be.instanceof(URI);
   });
 
-  describe('instantiation from litecoin uri', function() {
+  describe('instantiation from florincoin uri', function() {
     /* jshint maxstatements: 25 */
     var uri;
 
     it('parses address', function() {
-      uri = new URI('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
+      uri = new URI('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
       uri.address.should.be.instanceof(bitcore.Address);
       uri.network.should.equal(Networks.livenet);
     });
 
     it('parses amount', function() {
-      uri = URI.fromString('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=123.22');
+      uri = URI.fromString('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=123.22');
       uri.address.toString().should.equal('LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3');
       uri.amount.should.equal(12322000000);
       expect(uri.otherParam).to.be.undefined();
     });
 
     it('parses a testnet address', function() {
-      uri = new URI('litecoin:mkYY5NRvikVBY1EPtaq9fAFgquesdjqECw');
+      uri = new URI('florincoin:mkYY5NRvikVBY1EPtaq9fAFgquesdjqECw');
       uri.address.should.be.instanceof(bitcore.Address);
       uri.network.should.equal(Networks.testnet);
     });
@@ -105,12 +105,12 @@ describe('URI', function() {
 
     it('throws error when a required feature is not supported', function() {
       (function() {
-        return new URI('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&other=param&req-required=param');
+        return new URI('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&other=param&req-required=param');
       }).should.throw(Error);
     });
 
     it('has no false negative when checking supported features', function() {
-      uri = new URI('litecoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&other=param&' +
+      uri = new URI('florincoin:LXc3QtfC179bxQV83r3XaFKfsgXsKGeZv3?amount=1.2&other=param&' +
                     'req-required=param', ['req-required']);
       uri.address.should.be.instanceof(bitcore.Address);
       uri.amount.should.equal(120000000);

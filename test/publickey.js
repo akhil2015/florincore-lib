@@ -351,7 +351,7 @@ describe('PublicKey', function() {
   describe('hashes', function() {
 
     // wif private key, address
-    // see: https://github.com/litecoin-project/litecoin/blob/master-0.10/src/test/key_tests.cpp#L20
+    // see: https://github.com/akhil2015/florincoin/blob/master-0.10/src/test/key_tests.cpp#L20
     var data = [
       ['6uGFQ4DSW7zh1viHZi6iiVT17CncvoaV4MHvGvJKPDaLCdymj87', 'LiUo6Zn39joYJBzPUhssbDwAywhjFcoHE3'],
       ['6vVo7sPkeLTwVdAntrv4Gbnsyr75H8ChD3P5iyHziwaqe8mCYR5', 'LZJvLSP5SGKcFS13MHgdrVhpFUbEMB5XVC'],
